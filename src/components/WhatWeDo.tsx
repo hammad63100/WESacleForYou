@@ -6,55 +6,55 @@ const offerings = [
     icon: Search,
     title: 'Keyword Research & SEO Integration',
     description:
-      'We conduct exhaustive keyword research to identify high-volume, relevant search terms. Our SEO strategies ensure your products rank higher in Amazon search results, driving organic traffic and visibility.',
+      'We use advanced keyword tools and real-time search data to uncover what your customers are actually looking for — then integrate those insights naturally throughout your titles, bullets, and descriptions to boost ranking and organic traffic.',
     features: [
-      'Competitor keyword analysis',
-      'Long-tail keyword optimization',
-      'Search ranking monitoring',
+      'Finding high-performing primary and secondary keywords',
+      'Competitor analysis for effective positioning',
+      'Implementing backend search terms for hidden optimization',
     ],
   },
   {
     icon: PenTool,
     title: 'Compelling Copywriting',
     description:
-      'Our expert copywriters craft persuasive product titles, bullet points, and descriptions that highlight benefits, address pain points, and drive conversions.',
+      'We craft copy that not only informs but converts. From attention-grabbing titles to persuasive bullet points and story-driven descriptions, our listings connect emotionally and logically with your customers.',
     features: [
-      'Benefit-focused messaging',
-      'A/B tested copy variations',
-      'Brand voice consistency',
+      'Highlights your product\'s key features and benefits',
+      'Enhances readability and persuasion',
+      'Follows Amazon\'s best practices for formatting',
     ],
   },
   {
     icon: Sparkles,
-    title: 'Enhanced A+ Content Design',
+    title: 'Enhanced Brand Content (A+ Content)',
     description:
-      'Stand out with visually stunning A+ Content that tells your brand story, showcases product features, and builds trust with potential customers.',
+      'Our creative team designs visually engaging A+ Content that builds trust, elevates your brand image, and increases conversion rates through premium visuals and strategic storytelling.',
     features: [
-      'Custom graphic design',
-      'Brand storytelling',
-      'Comparison charts',
+      'Custom A+ Content design with stunning modules',
+      'Infographics & lifestyle imagery',
+      'Storefront design that reflects your brand identity',
     ],
   },
   {
     icon: Settings,
     title: 'Backend Optimization',
     description:
-      'We optimize your backend search terms, subject matter, and hidden keywords to maximize discoverability without cluttering your visible listing.',
+      'We take care of the technical side too — including backend search terms, subject matter fields and other hidden metadata that boost your organic visibility behind the scenes.',
     features: [
-      'Hidden keyword optimization',
-      'Category selection strategy',
-      'Indexing verification',
+      'Utilizing misspellings, synonyms, and alternate search terms',
+      'Avoiding redundant or keyword-stuffed content',
+      'Following Amazon\'s latest guidelines for backend fields',
     ],
   },
   {
     icon: Image,
     title: 'Image Strategy & Optimization',
     description:
-      'Professional image optimization ensures your products look their best, meet Amazon requirements, and convert browsers into buyers.',
+      'High-quality visuals are key to conversion. We ensure your images meet Amazon\'s strict standards and tell a visual story that sells — from hero shots to lifestyle imagery and infographics.',
     features: [
-      'Image quality enhancement',
-      'Lifestyle photography guidance',
-      'Infographic creation',
+      'Studio-grade product photography',
+      'Lifestyle photography for emotional connection',
+      'Premium product videos for engagement',
     ],
   },
 ];

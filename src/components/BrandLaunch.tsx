@@ -30,12 +30,12 @@ const steps = [
 ];
 
 const benefits = [
-  'Complete brand-building from A to Z',
-  'Data-driven launch strategy',
-  'Professional content creation',
-  'Ongoing optimization & support',
-  'Dedicated account manager',
-  'Performance tracking & reporting',
+  'Complete end-to-end Amazon Launch Accelerator',
+  'Market analysis and supplier coordination',
+  'Listing development and creative assets',
+  'PPC setup and brand protection',
+  'Structured framework for brand presence',
+  'Eliminate mixed messaging and weak positioning',
 ];
 
 export const BrandLaunch = () => {
@@ -81,8 +81,8 @@ export const BrandLaunch = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            From concept to category leader, our comprehensive launch program
-            gives your brand everything it needs to succeed on Amazon.
+            Launching on Amazon isn't just about putting a product online — it's about building a strong, scalable brand foundation. 
+            From market analysis and supplier coordination to listing development, creative assets, PPC setup, and brand protection — we take care of every step.
           </p>
         </div>
 
