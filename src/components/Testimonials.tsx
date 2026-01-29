@@ -51,7 +51,7 @@ export const Testimonials = () => {
     if (isPaused) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
+    }, 2000);
     return () => clearInterval(interval);
   }, [isPaused]);
 

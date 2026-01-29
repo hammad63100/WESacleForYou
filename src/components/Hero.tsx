@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { SparklesText } from '@/components/ui/sparkles-text';
 import { useScrollAnimation, useCounter } from '@/hooks/useScrollAnimation';
 import { HeroBackground3D } from './HeroBackground3D';
 
@@ -62,12 +63,20 @@ export const Hero = () => {
             }`}
           >
             Scale Your{' '}
-            <span className="text-primary relative">
+            <SparklesText 
+              className="text-primary" 
+              colors={{ first: "#22c55e", second: "#10b981" }}
+              sparklesCount={12}
+            >
               Amazon Business
-              <span className="absolute -bottom-2 left-0 w-full h-1 bg-primary/30 rounded-full" />
-            </span>
+            </SparklesText>
             <br />
-            with Confidence
+            <SparklesText 
+              colors={{ first: "#22c55e", second: "#10b981" }}
+              sparklesCount={10}
+            >
+              with Confidence
+            </SparklesText>
           </h1>
 
           {/* Subtext */}

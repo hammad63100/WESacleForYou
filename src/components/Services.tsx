@@ -153,25 +153,32 @@ const ServiceCard = ({
   isVisible: boolean;
 }) => {
   return (
-    <Card
-      className={`group cursor-pointer border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 ${
+    <div
+      className={`group h-52 [perspective:1000px] ${
         isVisible
           ? 'opacity-100 translate-y-0'
           : 'opacity-0 translate-y-8'
       }`}
-      style={{ transitionDelay: `${index * 50}ms` }}
+      style={{ transitionDelay: `${index * 50}ms`, transition: 'opacity 0.5s, transform 0.5s' }}
     >
-      <CardContent className="p-6">
-        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-          <Icon className="w-6 h-6 text-primary" />
+      <div className="relative h-full w-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        {/* Front Side - Icon and Title */}
+        <div className="absolute h-full w-full rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm [backface-visibility:hidden] flex flex-col items-center justify-center p-6 text-center">
+          <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+            <Icon className="w-7 h-7 text-primary" />
+          </div>
+          <h3 className="text-lg font-semibold">
+            {title}
+          </h3>
         </div>
-        <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
-          {title}
-        </h3>
-        <p className="text-muted-foreground text-sm leading-relaxed">
-          {description}
-        </p>
-      </CardContent>
-    </Card>
+
+        {/* Back Side - Description */}
+        <div className="absolute h-full w-full rounded-xl border border-primary/30 bg-primary/10 backdrop-blur-sm [backface-visibility:hidden] [transform:rotateY(180deg)] flex items-center justify-center p-6">
+          <p className="text-foreground text-sm leading-relaxed text-center">
+            {description}
+          </p>
+        </div>
+      </div>
+    </div>
   );
 };

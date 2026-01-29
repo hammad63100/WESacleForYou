@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { PulsatingButton } from '@/components/ui/pulsating-button';
 import { ThemeToggle } from './ThemeToggle';
 import { AnimatedLogo } from './AnimatedLogo';
 import { cn } from '@/lib/utils';
@@ -70,12 +71,14 @@ export const Navbar = () => {
           {/* Right Side */}
           <div className="flex items-center gap-4">
             <ThemeToggle />
-            <Button
+            <PulsatingButton
               onClick={() => scrollToSection('#contact')}
-              className="hidden sm:flex bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
+              className="hidden sm:flex shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
+              pulseColor="#22c55e"
+              duration="1.5s"
             >
               Book a Free Consultation
-            </Button>
+            </PulsatingButton>
 
             {/* Mobile Menu Button */}
             <Button
@@ -114,12 +117,14 @@ export const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <Button
+            <PulsatingButton
               onClick={() => scrollToSection('#contact')}
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+              className="w-full"
+              pulseColor="#22c55e"
+              duration="1.5s"
             >
               Book a Free Consultation
-            </Button>
+            </PulsatingButton>
           </div>
         </div>
       </nav>

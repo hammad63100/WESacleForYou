@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import logoImage from '@/assets/logo.jfif';
+import logoImage from '@/assets/logo.png';
 import { cn } from '@/lib/utils';
 
 interface AnimatedLogoProps {
@@ -46,24 +46,12 @@ export const AnimatedLogo = ({ onClick, className }: AnimatedLogoProps) => {
         {/* Main logo image */}
         <img
           src={logoImage}
-          alt="WeScaleForYou Logo"
-          className="h-10 w-auto object-contain relative z-10 drop-shadow-lg"
+          alt="WeScale ForYou Logo"
+          className="h-24 w-auto object-contain relative z-10 drop-shadow-lg"
           style={{
             filter: isHovered 
               ? 'drop-shadow(0 0 20px hsl(var(--primary) / 0.5))' 
               : 'drop-shadow(0 4px 6px rgba(0,0,0,0.1))',
-          }}
-        />
-        
-        {/* 3D shadow layer */}
-        <img
-          src={logoImage}
-          alt=""
-          aria-hidden="true"
-          className="absolute top-0 left-0 h-10 w-auto object-contain opacity-20 blur-sm"
-          style={{
-            transform: 'translateZ(-20px) translateY(4px) translateX(4px)',
-            filter: 'brightness(0)',
           }}
         />
       </div>
