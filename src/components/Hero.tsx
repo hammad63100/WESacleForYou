@@ -8,6 +8,7 @@ const stats = [
   { value: 42, suffix: '%', label: 'Avg. Conversion Increase' },
   { value: 150, suffix: '+', label: 'Brands Scaled' },
   { value: 10, suffix: 'M+', label: 'Revenue Generated' },
+  { value: 24, suffix: '/7', label: 'Dedicated Support' },
 ];
 
 export const Hero = () => {
@@ -107,7 +108,7 @@ export const Hero = () => {
 
           {/* Stats */}
           <div
-            className={`grid grid-cols-1 sm:grid-cols-3 gap-8 transition-all duration-700 delay-400 ${
+            className={`grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 transition-all duration-700 delay-400 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
@@ -142,12 +143,14 @@ const StatCard = ({
   const count = useCounter(value, 2000, isVisible);
 
   return (
-    <div className="text-center p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-      <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
-        {count}
-        {suffix}
+    <div className="flex flex-col items-center">
+      <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-primary/30 bg-card/30 backdrop-blur-sm flex items-center justify-center mb-3 hover:border-primary/60 hover:bg-card/50 transition-all duration-300 hover:scale-105">
+        <span className="text-2xl sm:text-3xl font-bold text-primary">
+          {count}
+          {suffix}
+        </span>
       </div>
-      <div className="text-sm text-muted-foreground">{label}</div>
+      <div className="text-sm text-muted-foreground text-center">{label}</div>
     </div>
   );
 };
