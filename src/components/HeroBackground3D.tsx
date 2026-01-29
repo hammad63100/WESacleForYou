@@ -1,7 +1,12 @@
-import { useRef, useMemo } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { useRef, useMemo, useState, useEffect } from 'react';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Float } from '@react-three/drei';
 import * as THREE from 'three';
+
+interface MousePosition {
+  x: number;
+  y: number;
+}
 
 const FloatingShape = ({
   position,
@@ -9,19 +14,38 @@ const FloatingShape = ({
   speed,
   scale,
   geometry,
+  mouseInfluence = 0.5,
 }: {
   position: [number, number, number];
   color: string;
   speed: number;
   scale: number;
   geometry: 'sphere' | 'octahedron' | 'icosahedron' | 'torus' | 'box' | 'cone';
+  mouseInfluence?: number;
 }) => {
   const meshRef = useRef<THREE.Mesh>(null);
+  const initialPosition = useRef(position);
 
   useFrame((state) => {
     if (meshRef.current) {
+      // Base rotation animation
       meshRef.current.rotation.x = state.clock.elapsedTime * speed * 0.2;
       meshRef.current.rotation.y = state.clock.elapsedTime * speed * 0.15;
+
+      // Subtle mouse-follow effect on position
+      const mouseX = state.mouse.x * mouseInfluence;
+      const mouseY = state.mouse.y * mouseInfluence;
+      
+      meshRef.current.position.x = THREE.MathUtils.lerp(
+        meshRef.current.position.x,
+        initialPosition.current[0] + mouseX,
+        0.05
+      );
+      meshRef.current.position.y = THREE.MathUtils.lerp(
+        meshRef.current.position.y,
+        initialPosition.current[1] + mouseY,
+        0.05
+      );
     }
   });
 
@@ -79,6 +103,9 @@ const ParticleField = () => {
     if (particlesRef.current) {
       particlesRef.current.rotation.y = state.clock.elapsedTime * 0.015;
       particlesRef.current.rotation.x = state.clock.elapsedTime * 0.008;
+      
+      // Subtle mouse influence on particles
+      particlesRef.current.rotation.z = state.mouse.x * 0.05;
     }
   });
 
@@ -103,21 +130,36 @@ const ParticleField = () => {
   );
 };
 
+const CameraController = () => {
+  const { camera } = useThree();
+  
+  useFrame((state) => {
+    // Subtle camera movement based on mouse
+    camera.position.x = THREE.MathUtils.lerp(camera.position.x, state.mouse.x * 0.5, 0.02);
+    camera.position.y = THREE.MathUtils.lerp(camera.position.y, state.mouse.y * 0.3, 0.02);
+    camera.lookAt(0, 0, 0);
+  });
+  
+  return null;
+};
+
 const Scene = () => {
   return (
     <>
+      <CameraController />
       <ambientLight intensity={0.6} />
       <directionalLight position={[10, 10, 5]} intensity={0.8} />
       <directionalLight position={[-10, -5, 5]} intensity={0.4} color="#10b981" />
       <pointLight position={[0, 0, 10]} intensity={0.3} color="#ffffff" />
 
-      {/* Clean floating shapes - solid and crisp */}
+      {/* Clean floating shapes with mouse influence */}
       <FloatingShape
         position={[-5, 2.5, -4]}
         color="#10b981"
         speed={1.2}
         scale={1.1}
         geometry="sphere"
+        mouseInfluence={0.8}
       />
       <FloatingShape
         position={[5, -1.5, -3]}
@@ -125,6 +167,7 @@ const Scene = () => {
         speed={0.8}
         scale={0.9}
         geometry="octahedron"
+        mouseInfluence={0.6}
       />
       <FloatingShape
         position={[-4, -2.5, -5]}
@@ -132,6 +175,7 @@ const Scene = () => {
         speed={1.5}
         scale={0.7}
         geometry="box"
+        mouseInfluence={0.4}
       />
       <FloatingShape
         position={[4, 3, -6]}
@@ -139,6 +183,7 @@ const Scene = () => {
         speed={1}
         scale={0.8}
         geometry="torus"
+        mouseInfluence={0.7}
       />
       <FloatingShape
         position={[0, -3.5, -4]}
@@ -146,6 +191,7 @@ const Scene = () => {
         speed={0.6}
         scale={0.6}
         geometry="cone"
+        mouseInfluence={0.5}
       />
       <FloatingShape
         position={[-6, 0, -7]}
@@ -153,6 +199,7 @@ const Scene = () => {
         speed={1.3}
         scale={0.9}
         geometry="icosahedron"
+        mouseInfluence={0.3}
       />
       <FloatingShape
         position={[6, 1.5, -5]}
@@ -160,6 +207,7 @@ const Scene = () => {
         speed={0.9}
         scale={0.5}
         geometry="box"
+        mouseInfluence={0.9}
       />
       <FloatingShape
         position={[2, 4, -8]}
@@ -167,6 +215,7 @@ const Scene = () => {
         speed={0.7}
         scale={0.6}
         geometry="sphere"
+        mouseInfluence={0.4}
       />
 
       {/* Particle field */}
