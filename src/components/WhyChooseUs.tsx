@@ -4,46 +4,46 @@ import { useScrollAnimation, useCounter } from '@/hooks/useScrollAnimation';
 const features = [
   {
     icon: BarChart,
-    title: 'Data-Driven Strategy',
+    title: 'Data-Driven PPC Strategy',
     description:
-      'Every decision backed by comprehensive market analysis and performance data.',
+      'High-performing keyword selection, competitor analysis, bid optimization for cost efficiency, and seasonal trend-based adjustments.',
   },
   {
     icon: Zap,
     title: 'Full Campaign Management',
     description:
-      'End-to-end management of your advertising campaigns for maximum efficiency.',
+      'Sponsored Product Ads, Sponsored Brand Ads, Sponsored Display Ads, and Video Ads — we manage it all to maximize your reach.',
   },
   {
     icon: TrendingUp,
-    title: 'Continuous Optimization',
+    title: 'Continuous Optimization & A/B Testing',
     description:
-      'Regular A/B testing and refinement to constantly improve your results.',
+      'A/B testing ad copies, creatives, and bids. Negative keyword management and ad scheduling for peak performance.',
   },
   {
     icon: Shield,
     title: 'Cost-Effective Budget Management',
     description:
-      'Strategic allocation to maximize returns while minimizing wasted ad spend.',
+      'Every dollar counts. We focus on the lowest ACoS (Advertising Cost of Sales) to increase profitability without overspending.',
   },
   {
     icon: BarChart,
-    title: 'Advanced Analytics',
+    title: 'Advanced Analytics & Reporting',
     description:
-      'Custom dashboards and reports that give you full visibility into performance.',
+      'Sales and conversion tracking, CTR analysis, CPC breakdown, and ROI evaluation to keep you informed.',
   },
   {
     icon: Users,
     title: 'An Extension of Your Team',
     description:
-      'We work alongside you as dedicated partners invested in your success.',
+      'WeScaleForYou integrates seamlessly with your business — flexibility, collaboration, and transparency you\'d expect internally.',
   },
 ];
 
 const stats = [
-  { value: 98, suffix: '%', label: 'Client Satisfaction' },
-  { value: 500, suffix: '+', label: 'Campaigns Managed' },
-  { value: 35, suffix: '%', label: 'Avg. ACOS Reduction' },
+  { value: 42, suffix: '%', label: 'Avg. Conversion Increase' },
+  { value: 150, suffix: '+', label: 'Brands Scaled' },
+  { value: 10, suffix: 'M+', label: 'Revenue Generated' },
   { value: 24, suffix: '/7', label: 'Dedicated Support' },
 ];
 

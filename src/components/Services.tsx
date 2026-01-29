@@ -20,73 +20,73 @@ const services = [
     icon: TrendingUp,
     title: 'Growth Planning & Strategy',
     description:
-      'Tailored roadmaps to scale your Amazon business with data-backed strategic decisions.',
+      'Whatever your goals, we\'ll help you achieve them through data-driven planning, precision execution, and forward-thinking growth strategies.',
   },
   {
     icon: Target,
     title: 'PPC Advertising',
     description:
-      'Maximize ROI with expert management of Sponsored Products, Brands, and Display campaigns.',
+      'Need more sales or stronger profitability? Our Amazon PPC experts use cutting-edge tools and proven methods to optimize campaigns tailored to your brand\'s goals.',
   },
   {
     icon: FileText,
     title: 'Product Listing Optimization',
     description:
-      'Compelling titles, bullets, and descriptions optimized for conversions and visibility.',
+      'We craft high-converting listings that boost rankings, lower ad costs, and turn browsers into loyal customers.',
   },
   {
     icon: Monitor,
-    title: 'DSP Advertising',
+    title: 'Demand-Side Platform (DSP)',
     description:
-      'Reach audiences on and off Amazon with programmatic display and video advertising.',
+      'Extend your brand\'s reach beyond Amazon. Our DSP specialists build programmatic ad campaigns that increase visibility and strengthen brand loyalty across the web.',
   },
   {
     icon: Shield,
     title: 'Amazon Brand Support',
     description:
-      'Full Brand Registry support, A+ Content, and brand protection strategies.',
+      'From account health issues to stranded inventory, our Partner Success team handles it all — so your business runs smoothly, 24/7.',
   },
   {
     icon: Package,
     title: 'Inventory Management',
     description:
-      'Prevent stockouts and overstock with intelligent forecasting and planning.',
+      'Rest easy knowing your stock levels, forecasts, and restocking timelines are in expert hands with our proven inventory projection systems.',
   },
   {
     icon: Globe,
     title: 'Google Advertising',
     description:
-      'Drive external traffic to your Amazon listings with targeted Google campaigns.',
+      'Bring shoppers from the world\'s largest search engine straight to your Amazon listings through targeted, performance-based Google Ads campaigns.',
   },
   {
     icon: Headphones,
     title: 'Customer Service Management',
     description:
-      'Professional customer communication to maintain high seller ratings.',
+      'Reclaim your time while we manage customer messaging, reviews, and buyer feedback with precision and care.',
   },
   {
     icon: RotateCcw,
     title: 'Lost Inventory Recovery',
     description:
-      'Recover funds for lost, damaged, or mishandled inventory by Amazon.',
+      'Our proprietary process tracks down every dollar Amazon owes you, ensuring you recover funds and protect your bottom line.',
   },
   {
     icon: Search,
     title: 'Amazon SEO',
     description:
-      'Rank higher in search results with strategic keyword optimization.',
+      'We elevate your organic ranking with keyword-rich, conversion-focused SEO strategies designed to drive traffic and boost sales velocity.',
   },
   {
     icon: Camera,
     title: 'Product Photography & Video',
     description:
-      'Professional visual content that showcases your products beautifully.',
+      'Make your products shine. Our professional photo and video team creates stunning visuals that stop scrolls and convert clicks into sales.',
   },
   {
     icon: BarChart3,
     title: 'Customized Reporting',
     description:
-      'Detailed analytics and insights to track performance and growth.',
+      'Stay in control with real-time insights. Our custom dashboards and reports give you a clear view of what matters most to your business.',
   },
 ];
 
@@ -118,8 +118,8 @@ export const Services = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}
           >
-            From launch to scale, we provide comprehensive Amazon services that
-            drive real results for your brand.
+            Welcome to WeScaleForYou — where your brand's growth happens "On the Same Floor." 
+            Every detail is handled with precision by our team of seasoned ecommerce experts who live and breathe Amazon.
           </p>
         </div>
 
