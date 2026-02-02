@@ -45,7 +45,7 @@ export const Navbar = () => {
           : 'bg-transparent'
       )}
     >
-      <nav className="container mx-auto px-4 py-4">
+      <nav className="container mx-auto px-4 py-1">
         <div className="flex items-center justify-between">
           {/* Animated 3D Logo */}
           <AnimatedLogo onClick={() => scrollToSection('#home')} />
@@ -100,10 +100,10 @@ export const Navbar = () => {
         <div
           className={cn(
             'lg:hidden overflow-hidden transition-all duration-300',
-            isMobileMenuOpen ? 'max-h-96 mt-4' : 'max-h-0'
+            isMobileMenuOpen ? 'max-h-[500px] mt-4' : 'max-h-0'
           )}
         >
-          <div className="flex flex-col gap-4 pb-4">
+          <div className="flex flex-col gap-4 p-4 bg-background/95 backdrop-blur-lg rounded-xl shadow-xl border border-border/50">
             {navLinks.map((link) => (
               <a
                 key={link.name}
