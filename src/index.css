@@ -174,17 +174,6 @@ All colors MUST be HSL.
   }
 }
 
-/* Hide default browser cursor for smooth cursor */
-* {
-  cursor: none !important;
-}
-
-/* Keep text cursor for inputs */
-input,
-textarea,
-select {
-  cursor: text !important;
-}
 
 /* Pulsating Button Animation */
 @keyframes pulse {

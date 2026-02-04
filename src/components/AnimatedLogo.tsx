@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
 import logoImage from '@/assets/logo.png';
 import { cn } from '@/lib/utils';
 
@@ -9,6 +10,18 @@ interface AnimatedLogoProps {
 
 export const AnimatedLogo = ({ onClick, className }: AnimatedLogoProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null; 
+  }
+
+  const isLight = resolvedTheme === 'light';
 
   return (
     <a
@@ -50,8 +63,8 @@ export const AnimatedLogo = ({ onClick, className }: AnimatedLogoProps) => {
           className="h-[90px] w-auto object-contain relative z-10 drop-shadow-lg"
           style={{
             filter: isHovered 
-              ? 'drop-shadow(0 0 20px hsl(var(--primary) / 0.5))' 
-              : 'drop-shadow(0 4px 6px rgba(0,0,0,0.1))',
+              ? `drop-shadow(0 0 20px hsl(var(--primary) / 0.5)) ${isLight ? 'invert(1) hue-rotate(180deg)' : ''}`
+              : `drop-shadow(0 4px 6px rgba(0,0,0,0.1)) ${isLight ? 'invert(1) hue-rotate(180deg)' : ''}`,
           }}
         />
       </div>
