@@ -2,15 +2,9 @@ import { Suspense } from 'react';
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SparklesText } from '@/components/ui/sparkles-text';
-import { useScrollAnimation, useCounter } from '@/hooks/useScrollAnimation';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { HeroBackground3D } from './HeroBackground3D';
-
-const stats = [
-  { value: 42, suffix: '%', label: 'Avg. Conversion Increase' },
-  { value: 150, suffix: '+', label: 'Brands Scaled' },
-  { value: 10, suffix: 'M+', label: 'Revenue Generated' },
-  { value: 24, suffix: '/7', label: 'Dedicated Support' },
-];
+import amazonImage from '@/assets/AMAZON.png';
 
 export const Hero = () => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.3 });
@@ -25,7 +19,7 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32"
     >
       {/* 3D Animated Background */}
       <Suspense fallback={null}>
@@ -43,87 +37,92 @@ export const Hero = () => {
       </div>
 
       <div ref={ref} className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div
-            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8 transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
-          >
-            <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            <span className="text-sm font-medium text-primary">
-              Amazon Growth Experts
-            </span>
+        <div className="flex flex-col lg:flex-row items-center gap-0">
+          {/* Left Side - Text Content */}
+          <div className="lg:w-1/2 text-center lg:text-left lg:pr-8">
+            {/* Badge */}
+            <div
+              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8 transition-all duration-700 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
+              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+              <span className="text-sm font-medium text-primary">
+                Amazon Growth Experts
+              </span>
+            </div>
+
+            {/* Headline */}
+            <h1
+              className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 transition-all duration-700 delay-100 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
+              Scale Your{' '}
+              <SparklesText 
+                className="text-primary" 
+                colors={{ first: "#22c55e", second: "#10b981" }}
+                sparklesCount={12}
+              >
+                Amazon Business
+              </SparklesText>
+              <br />
+              <SparklesText 
+                colors={{ first: "#22c55e", second: "#10b981" }}
+                sparklesCount={10}
+              >
+                with Confidence
+              </SparklesText>
+            </h1>
+
+            {/* Subtext */}
+            <p
+              className={`text-lg sm:text-xl text-muted-foreground max-w-2xl mb-8 transition-all duration-700 delay-200 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
+              We're your dedicated partners in navigating the Amazon marketplace.
+              From PPC optimization to brand building, we help sellers maximize their
+              potential and achieve sustainable growth.
+            </p>
+
+            {/* CTAs */}
+            <div
+              className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12 transition-all duration-700 delay-300 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
+              <Button
+                size="lg"
+                onClick={() => scrollToSection('#contact')}
+                className="group bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
+                Book a Free Consultation
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => scrollToSection('#case-studies')}
+                className="group border-border hover:bg-muted transition-all duration-300"
+              >
+                <Play className="mr-2 h-4 w-4" />
+                See Our Work
+              </Button>
+            </div>
           </div>
 
-          {/* Headline */}
-          <h1
-            className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 transition-all duration-700 delay-100 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
-          >
-            Scale Your{' '}
-            <SparklesText 
-              className="text-primary" 
-              colors={{ first: "#22c55e", second: "#10b981" }}
-              sparklesCount={12}
-            >
-              Amazon Business
-            </SparklesText>
-            <br />
-            <SparklesText 
-              colors={{ first: "#22c55e", second: "#10b981" }}
-              sparklesCount={10}
-            >
-              with Confidence
-            </SparklesText>
-          </h1>
-
-          {/* Subtext */}
-          <p
-            className={`text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 transition-all duration-700 delay-200 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
-          >
-            We're your dedicated partners in navigating the Amazon marketplace.
-            From PPC optimization to brand building, we help sellers maximize their
-            potential and achieve sustainable growth.
-          </p>
-
-          {/* CTAs */}
+          {/* Right Side - Amazon Image */}
           <div
-            className={`flex flex-col sm:flex-row gap-4 justify-center mb-16 transition-all duration-700 delay-300 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            className={`lg:w-1/2 flex justify-center lg:justify-end items-center transition-all duration-700 delay-500 ${
+              isVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-10 scale-95'
             }`}
           >
-            <Button
-              size="lg"
-              onClick={() => scrollToSection('#contact')}
-              className="group bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-            >
-              Book a Free Consultation
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => scrollToSection('#case-studies')}
-              className="group border-border hover:bg-muted transition-all duration-300"
-            >
-              <Play className="mr-2 h-4 w-4" />
-              See Our Work
-            </Button>
-          </div>
-
-          {/* Stats */}
-          <div
-            className={`grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 transition-all duration-700 delay-400 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
-          >
-            {stats.map((stat, index) => (
-              <StatCard key={index} {...stat} isVisible={isVisible} />
-            ))}
+            <img
+              src={amazonImage}
+              alt="Amazon Business Growth"
+              className="w-full max-w-full h-auto max-h-[80vh] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+            />
           </div>
         </div>
       </div>
@@ -135,31 +134,5 @@ export const Hero = () => {
         </div>
       </div>
     </section>
-  );
-};
-
-const StatCard = ({
-  value,
-  suffix,
-  label,
-  isVisible,
-}: {
-  value: number;
-  suffix: string;
-  label: string;
-  isVisible: boolean;
-}) => {
-  const count = useCounter(value, 2000, isVisible);
-
-  return (
-    <div className="flex flex-col items-center">
-      <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-primary/30 bg-card/30 backdrop-blur-sm flex items-center justify-center mb-3 hover:border-primary/60 hover:bg-card/50 transition-all duration-300 hover:scale-105">
-        <span className="text-2xl sm:text-3xl font-bold text-primary">
-          {count}
-          {suffix}
-        </span>
-      </div>
-      <div className="text-sm text-muted-foreground text-center">{label}</div>
-    </div>
   );
 };

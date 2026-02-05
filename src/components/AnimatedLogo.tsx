@@ -60,7 +60,7 @@ export const AnimatedLogo = ({ onClick, className }: AnimatedLogoProps) => {
         <img
           src={logoImage}
           alt="WeScale ForYou Logo"
-          className="h-[90px] w-auto object-contain relative z-10 drop-shadow-lg"
+          className="h-[160px] w-auto object-contain relative z-10 drop-shadow-lg"
           style={{
             filter: isHovered 
               ? `drop-shadow(0 0 20px hsl(var(--primary) / 0.5)) ${isLight ? 'invert(1) hue-rotate(180deg)' : ''}`

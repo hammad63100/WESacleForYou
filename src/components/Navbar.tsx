@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Instagram, Facebook, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PulsatingButton } from '@/components/ui/pulsating-button';
 import { ThemeToggle } from './ThemeToggle';
@@ -37,18 +37,63 @@ export const Navbar = () => {
   };
 
   return (
-    <header
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled
-          ? 'bg-background/80 backdrop-blur-lg shadow-lg'
-          : 'bg-transparent'
-      )}
-    >
+    <>
+      {/* Top Green Banner */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-primary text-primary-foreground py-2 px-4">
+        <div className="container mx-auto flex items-center justify-between text-sm font-medium">
+          <span>WANT A FREE AMAZON PPC AUDIT ?</span>
+          <div className="flex items-center gap-4">
+            <a href="tel:+13147896911" className="hover:underline flex items-center gap-1">
+              📞 +1 (314) 789-6911
+            </a>
+            <div className="flex items-center gap-2">
+              <a 
+                href="https://www.instagram.com/wescaleforyou?igsh=bWt5NTF0azVuY2F1" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:scale-110 transition-transform"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a 
+                href="https://www.facebook.com/profile.php?id=100003372257229" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:scale-110 transition-transform"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-4 w-4" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/ihtisham-khan-8204412b0/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:scale-110 transition-transform"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Header - adjusted for top banner */}
+      <header
+        className={cn(
+          'fixed top-[40px] left-0 right-0 z-40 transition-all duration-300',
+          isScrolled
+            ? 'bg-transparent backdrop-blur-sm'
+            : 'bg-transparent'
+        )}
+      >
       <nav className="container mx-auto px-4 py-1">
         <div className="flex items-center justify-between">
-          {/* Animated 3D Logo */}
-          <AnimatedLogo onClick={() => scrollToSection('#home')} />
+          {/* Animated 3D Logo - Separate container for size control */}
+          <div className="flex-shrink-0">
+            <AnimatedLogo onClick={() => scrollToSection('#home')} className="scale-150" />
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
@@ -129,5 +174,6 @@ export const Navbar = () => {
         </div>
       </nav>
     </header>
+    </>
   );
 };
