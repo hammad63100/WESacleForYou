@@ -49,7 +49,7 @@ export const BrandLaunch = () => {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-24 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/10" />
       <div className="absolute top-0 left-0 w-full h-full">
@@ -61,27 +61,24 @@ export const BrandLaunch = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div
-            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
+            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
           >
             <Rocket className="w-4 h-4" />
             Brand A-Z Launch
           </div>
           <h2
-            className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 transition-all duration-700 delay-100 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
+            className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
           >
             Let's Build & Scale Your{' '}
             <span className="text-primary">Amazon Brand</span>
           </h2>
           <p
-            className={`text-lg text-muted-foreground transition-all duration-700 delay-200 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
+            className={`text-lg text-muted-foreground transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
           >
-            Launching on Amazon isn't just about putting a product online — it's about building a strong, scalable brand foundation. 
+            Launching on Amazon isn't just about putting a product online — it's about building a strong, scalable brand foundation.
             From market analysis and supplier coordination to listing development, creative assets, PPC setup, and brand protection — we take care of every step.
           </p>
         </div>
@@ -91,11 +88,10 @@ export const BrandLaunch = () => {
           {steps.map((step, index) => (
             <div
               key={index}
-              className={`relative p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-lg ${
-                isVisible
+              className={`relative p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-lg ${isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-8'
-              }`}
+                }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               {/* Step Number */}
@@ -117,9 +113,8 @@ export const BrandLaunch = () => {
 
         {/* Benefits & CTA */}
         <div
-          className={`flex flex-col lg:flex-row gap-12 items-center p-8 lg:p-12 rounded-3xl bg-card/50 backdrop-blur-sm border border-border/50 transition-all duration-700 delay-400 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
+          className={`flex flex-col lg:flex-row gap-12 items-center p-8 lg:p-12 rounded-3xl bg-card/50 backdrop-blur-sm border border-border/50 transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
         >
           {/* Benefits List */}
           <div className="w-full lg:w-1/2">

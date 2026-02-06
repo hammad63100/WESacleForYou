@@ -6,39 +6,67 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const testimonials = [
   {
-    name: 'Sarah Johnson',
-    role: 'Founder, NaturalGlow Skincare',
-    image: '/placeholder.svg',
+    name: 'David Miller',
+    role: 'Founder, OrganicGlow Beauty',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
     rating: 5,
-    text: "WeScaleForYou transformed our Amazon business. Their PPC expertise helped us achieve a 3x ROAS within the first quarter. They truly feel like an extension of our team.",
+    text: "WeScaleForYou's Amazon PPC Management completely transformed our ad strategy. Before working with them, our ACOS was at 45%. Within 3 months, they brought it down to 18% while increasing our sales by 120%. Their team is incredibly responsive and truly understands the Amazon ecosystem.",
   },
   {
-    name: 'Michael Chen',
-    role: 'CEO, TechGear Solutions',
-    image: '/placeholder.svg',
+    name: 'Sarah Mitchell',
+    role: 'CEO, HomeStyle Living',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face',
     rating: 5,
-    text: "The team's strategic approach to our product launches has been game-changing. We went from zero to $100K monthly revenue in just 6 months.",
+    text: "The A+ Content they created for our products is absolutely stunning. Our conversion rate jumped from 8% to 19% after implementing their designs. They really know how to tell a brand story visually. The A-Z Brand Launch service was exactly what we needed to enter the market confidently.",
   },
   {
-    name: 'Emily Rodriguez',
-    role: 'Owner, HomeEssentials Co.',
-    image: '/placeholder.svg',
+    name: 'Robert Thompson',
+    role: 'Owner, TechPro Accessories',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
     rating: 5,
-    text: "Their A+ Content and listing optimization doubled our conversion rate. The attention to detail and responsiveness is exceptional.",
+    text: "Their Amazon Listing Optimization service is top-notch. They rewrote all our titles, bullet points, and descriptions with proper keyword research. We went from page 3 to page 1 for our main keywords within 6 weeks. The backend search term optimization was a game-changer for organic traffic.",
   },
   {
-    name: 'David Thompson',
-    role: 'Director, FitLife Supplements',
-    image: '/placeholder.svg',
+    name: 'Jennifer Davis',
+    role: 'Director, PureNature Supplements',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
     rating: 5,
-    text: "We struggled with high ACOS for years. WeScaleForYou reduced it by 40% while increasing sales. Their data-driven approach really works.",
+    text: "WeScaleForYou helped us with LLC creation and trademark filing. The process was smooth and they handled everything professionally. Getting our brand registered on Amazon Brand Registry was seamless after that. Now our products are protected and we have access to all premium seller tools.",
   },
   {
-    name: 'Jessica Williams',
-    role: 'Founder, PetJoy Products',
-    image: '/placeholder.svg',
+    name: 'James Wilson',
+    role: 'Founder, ActiveWear Plus',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face',
     rating: 5,
-    text: "Professional, knowledgeable, and results-driven. They helped us navigate the complexities of Amazon and scale beyond our expectations.",
+    text: "Their Products Sourcing service saved us from a potential disaster. They helped us find reliable suppliers in China, negotiated better pricing, and ensured quality control. We launched 5 products with their full A-Z Brand Launch support and hit $50K monthly revenue in just 4 months!",
+  },
+  {
+    name: 'Emily Johnson',
+    role: 'CEO, BabyEssentials Co.',
+    image: 'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=150&h=150&fit=crop&crop=face',
+    rating: 5,
+    text: "We were struggling with our PPC campaigns for over a year. WeScaleForYou took over and within 60 days, our ROAS improved from 1.5x to 4.2x. Their weekly reporting and transparent communication made us feel confident in every decision. Highly recommend their Amazon PPC Management!",
+  },
+  {
+    name: 'Michael Brown',
+    role: 'Founder, FitGear Athletics',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face',
+    rating: 5,
+    text: "The A-Z Brand Launch service is incredible. They handled everything from market research to listing creation, photography guidelines, and PPC setup. We launched our brand from scratch and reached $30K in monthly sales within our first quarter. Best investment we ever made!",
+  },
+  {
+    name: 'Amanda White',
+    role: 'Owner, GreenHome Products',
+    image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&crop=face',
+    rating: 5,
+    text: "Their listing optimization and A+ Content design are world-class. After they optimized our main product listings, our click-through rate increased by 65% and conversion rate doubled. The team really understands what makes customers click 'Add to Cart'. Professional and results-driven!",
+  },
+  {
+    name: 'Christopher Anderson',
+    role: 'Director, PetCare Essentials',
+    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face',
+    rating: 5,
+    text: "WeScaleForYou's trademark filing service was quick and hassle-free. They guided us through the entire process and got our brand protected. The LLC creation support was equally impressive. Now we're fully Brand Registered and enjoying all the benefits. Thank you, WeScaleForYou!",
   },
 ];
 
@@ -68,7 +96,7 @@ export const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="py-24 bg-muted/30"
+      className="py-12 sm:py-16 lg:py-24 bg-muted/30"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -76,23 +104,20 @@ export const Testimonials = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span
-            className={`inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
+            className={`inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
           >
             Testimonials
           </span>
           <h2
-            className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 transition-all duration-700 delay-100 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
+            className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
           >
             What Our <span className="text-primary">Clients Say</span>
           </h2>
           <p
-            className={`text-lg text-muted-foreground transition-all duration-700 delay-200 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
+            className={`text-lg text-muted-foreground transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
           >
             Don't just take our word for it. Hear from the brands we've helped
             scale on Amazon.
@@ -101,9 +126,8 @@ export const Testimonials = () => {
 
         {/* Testimonial Carousel */}
         <div
-          className={`relative max-w-4xl mx-auto transition-all duration-700 delay-300 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
+          className={`relative max-w-4xl mx-auto transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
         >
           {/* Main Card */}
           <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
@@ -166,11 +190,10 @@ export const Testimonials = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all ${
-                    index === currentIndex
-                      ? 'bg-primary w-8'
-                      : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                  }`}
+                  className={`w-2.5 h-2.5 rounded-full transition-all ${index === currentIndex
+                    ? 'bg-primary w-8'
+                    : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                    }`}
                 />
               ))}
             </div>

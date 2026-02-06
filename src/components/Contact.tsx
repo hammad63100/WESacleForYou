@@ -15,11 +15,13 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { toast } from '@/hooks/use-toast';
 
 const services = [
-  'PPC Advertising',
-  'Product Listing Optimization',
-  'Brand Launch',
-  'DSP Advertising',
-  'Full Account Management',
+  'Amazon PPC Management',
+  'Amazon Listing Optimization',
+  'A+ Content & Creatives',
+  'A-Z Brand Launch',
+  'Trade Mark Filing',
+  'LLC / Company Creation',
+  'Products Sourcing',
   'Other',
 ];
 
@@ -27,14 +29,14 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'hello@wescaleforyou.com',
-    href: 'mailto:hello@wescaleforyou.com',
+    value: 'wescaleforyou@gmail.com',
+    href: 'mailto:wescaleforyou@gmail.com',
   },
   {
     icon: Phone,
     label: 'Phone',
-    value: '+1 (555) 123-4567',
-    href: 'tel:+15551234567',
+    value: '+1 (314) 789-6911',
+    href: 'tel:+13147896911',
   },
   {
     icon: MapPin,
@@ -60,22 +62,34 @@ export const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      // Send email using EmailJS or mailto fallback
+      const mailtoLink = `mailto:wescaleforyou@gmail.com?subject=New Inquiry from ${encodeURIComponent(formData.name)} - ${encodeURIComponent(formData.service)}&body=${encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCompany: ${formData.company}\nService Interest: ${formData.service}\n\nMessage:\n${formData.message}`
+      )}`;
 
-    toast({
-      title: 'Message sent successfully!',
-      description: "We'll get back to you within 24 hours.",
-    });
+      window.open(mailtoLink, '_blank');
 
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      service: '',
-      message: '',
-    });
+      toast({
+        title: 'Message ready to send!',
+        description: "Your email client will open. Please click send to complete your inquiry.",
+      });
+
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        service: '',
+        message: '',
+      });
+    } catch (error) {
+      toast({
+        title: 'Error',
+        description: 'Something went wrong. Please try again or email us directly at wescaleforyou@gmail.com',
+      });
+    }
+
     setIsSubmitting(false);
   };
 
@@ -89,29 +103,26 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-muted/30">
+    <section id="contact" className="py-12 sm:py-16 lg:py-24 bg-muted/30">
       <div ref={ref} className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span
-            className={`inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
+            className={`inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
           >
             Contact Us
           </span>
           <h2
-            className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 transition-all duration-700 delay-100 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
+            className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
           >
             Let's Start Your{' '}
             <span className="text-primary">Growth Journey</span>
           </h2>
           <p
-            className={`text-lg text-muted-foreground transition-all duration-700 delay-200 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
+            className={`text-lg text-muted-foreground transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
           >
             Ready to scale your Amazon business? Get in touch and let's discuss
             how we can help you achieve your goals.
@@ -121,9 +132,8 @@ export const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Info */}
           <div
-            className={`space-y-6 transition-all duration-700 delay-300 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
+            className={`space-y-6 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
           >
             {contactInfo.map((info, index) => (
               <Card
@@ -178,9 +188,8 @@ export const Contact = () => {
 
           {/* Contact Form */}
           <Card
-            className={`lg:col-span-2 border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-700 delay-400 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
+            className={`lg:col-span-2 border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
           >
             <CardContent className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -221,7 +230,7 @@ export const Contact = () => {
                       type="tel"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+1 (555) 000-0000"
+                      placeholder="+1 (314) 789-6911"
                       className="bg-background/50"
                     />
                   </div>

@@ -17,7 +17,7 @@ export const AnimatedLogo = ({ onClick, className }: AnimatedLogoProps) => {
   }, []);
 
   if (!mounted) {
-    return null; 
+    return null;
   }
 
   const isLight = resolvedTheme === 'light';
@@ -47,7 +47,7 @@ export const AnimatedLogo = ({ onClick, className }: AnimatedLogoProps) => {
         <img
           src={logoImage}
           alt="WeScale ForYou Logo"
-          className="h-[160px] w-auto object-contain relative z-10 drop-shadow-lg"
+          className="h-[80px] sm:h-[100px] md:h-[130px] w-auto object-contain relative z-10 drop-shadow-lg"
           style={{
             filter: `drop-shadow(0 4px 6px rgba(0,0,0,0.1)) ${isLight ? 'invert(1) hue-rotate(180deg)' : ''}`,
           }}

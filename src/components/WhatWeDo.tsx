@@ -63,29 +63,26 @@ export const WhatWeDo = () => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
 
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-12 sm:py-16 lg:py-24 bg-muted/30">
       <div ref={ref} className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span
-            className={`inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
+            className={`inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
           >
             What We Do
           </span>
           <h2
-            className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 transition-all duration-700 delay-100 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
+            className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
           >
             Comprehensive{' '}
             <span className="text-primary">Listing Optimization</span>
           </h2>
           <p
-            className={`text-lg text-muted-foreground transition-all duration-700 delay-200 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
+            className={`text-lg text-muted-foreground transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
           >
             We take a holistic approach to product listing optimization,
             ensuring every element works together to maximize your success.
@@ -128,11 +125,9 @@ const OfferingCard = ({
 }) => {
   return (
     <div
-      className={`flex flex-col ${
-        isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'
-      } gap-8 items-center p-8 rounded-3xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-lg ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}
+      className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'
+        } gap-8 items-center p-8 rounded-3xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-lg ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       {/* Icon & Visual */}

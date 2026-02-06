@@ -52,7 +52,7 @@ export const WhyChooseUs = () => {
   const { ref: statsRef, isVisible: statsVisible } = useScrollAnimation({ threshold: 0.3 });
 
   return (
-    <section id="why-us" className="py-24 relative overflow-hidden">
+    <section id="why-us" className="py-12 sm:py-16 lg:py-24 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
@@ -62,24 +62,21 @@ export const WhyChooseUs = () => {
         {/* Header */}
         <div ref={ref} className="text-center max-w-3xl mx-auto mb-16">
           <span
-            className={`inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
+            className={`inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
           >
             Why Choose Us
           </span>
           <h2
-            className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 transition-all duration-700 delay-100 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
+            className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
           >
             Your Success is{' '}
             <span className="text-primary">Our Priority</span>
           </h2>
           <p
-            className={`text-lg text-muted-foreground transition-all duration-700 delay-200 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
+            className={`text-lg text-muted-foreground transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
           >
             We combine expertise, technology, and dedication to deliver
             exceptional results for Amazon sellers.
@@ -127,9 +124,8 @@ const FeatureCard = ({
 }) => {
   return (
     <div
-      className={`group p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-500 hover:-translate-y-1 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}
+      className={`group p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-500 hover:-translate-y-1 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       <div className="flex items-start gap-4">
@@ -166,9 +162,8 @@ const StatItem = ({
 
   return (
     <div
-      className={`flex flex-col items-center transition-all duration-500 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-      }`}
+      className={`flex flex-col items-center transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+        }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-primary/30 bg-card/30 backdrop-blur-sm flex items-center justify-center mb-3 hover:border-primary/60 hover:bg-card/50 transition-all duration-300 hover:scale-105">

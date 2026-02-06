@@ -11,11 +11,13 @@ import { Input } from '@/components/ui/input';
 
 const footerLinks = {
   services: [
-    { name: 'PPC Advertising', href: '#services' },
-    { name: 'Product Optimization', href: '#services' },
-    { name: 'Brand Launch', href: '#services' },
-    { name: 'DSP Advertising', href: '#services' },
-    { name: 'Amazon SEO', href: '#services' },
+    { name: 'Amazon PPC Management', href: '#/service/amazon-ppc-management' },
+    { name: 'Amazon Listing Optimization', href: '#/service/amazon-listing-optimization' },
+    { name: 'A+ Content & Creatives', href: '#/service/a-content-creatives' },
+    { name: 'A-Z Brand Launch', href: '#/service/a-z-brand-launch' },
+    { name: 'Trade Mark Filing', href: '#/service/trade-mark-filing' },
+    { name: 'LLC / Company Creation', href: '#/service/llc-company-creation' },
+    { name: 'Products Sourcing', href: '#/service/products-sourcing' },
   ],
   company: [
     { name: 'About Us', href: '#why-us' },
@@ -32,21 +34,21 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { 
-    icon: Facebook, 
-    href: 'https://www.facebook.com/profile.php?id=100003372257229', 
+  {
+    icon: Facebook,
+    href: 'https://www.facebook.com/profile.php?id=100003372257229',
     label: 'Facebook',
     color: '#1877F2'
   },
-  { 
-    icon: Instagram, 
-    href: 'https://www.instagram.com/wescaleforyou?igsh=bWt5NTF0azVuY2F1', 
+  {
+    icon: Instagram,
+    href: 'https://www.instagram.com/wescaleforyou?igsh=bWt5NTF0azVuY2F1',
     label: 'Instagram',
     color: '#E4405F'
   },
-  { 
-    icon: Linkedin, 
-    href: 'https://www.linkedin.com/in/ihtisham-khan-8204412b0/', 
+  {
+    icon: Linkedin,
+    href: 'https://www.linkedin.com/in/ihtisham-khan-8204412b0/',
     label: 'LinkedIn',
     color: '#0A66C2'
   },
@@ -59,11 +61,11 @@ export const Footer = () => {
 
   return (
     <footer className="bg-card border-t border-border">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+      <div className="container mx-auto px-4 py-8 sm:py-12 lg:py-16">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand */}
-          <div className="lg:col-span-2">
-            <a href="#home" className="text-2xl font-bold text-primary">
+          <div className="col-span-2 md:col-span-3 lg:col-span-2">
+            <a href="#home" className="text-xl sm:text-2xl font-bold text-primary">
               WeScaleForYou
             </a>
             <p className="mt-4 text-muted-foreground max-w-sm">
@@ -111,7 +113,7 @@ export const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.name}
                   </a>
@@ -128,7 +130,7 @@ export const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.name}
                   </a>
@@ -145,7 +147,7 @@ export const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.name}
                   </a>

@@ -19,7 +19,7 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-48"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 sm:pt-40 lg:pt-48"
     >
       {/* 3D Animated Background */}
       <Suspense fallback={null}>
@@ -28,7 +28,7 @@ export const Hero = () => {
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-background/80" />
-      
+
       {/* Glow Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/20 rounded-full blur-3xl animate-pulse" />
@@ -42,9 +42,8 @@ export const Hero = () => {
           <div className="lg:w-[45%] text-center lg:text-left">
             {/* Badge */}
             <div
-              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8 transition-all duration-700 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
+              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
             >
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
               <span className="text-sm font-medium text-primary">
@@ -54,20 +53,19 @@ export const Hero = () => {
 
             {/* Headline */}
             <h1
-              className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 transition-all duration-700 delay-100 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
+              className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
             >
               Scale Your{' '}
-              <SparklesText 
-                className="text-primary" 
+              <SparklesText
+                className="text-primary"
                 colors={{ first: "#22c55e", second: "#10b981" }}
                 sparklesCount={12}
               >
                 Amazon Business
               </SparklesText>
               <br />
-              <SparklesText 
+              <SparklesText
                 colors={{ first: "#22c55e", second: "#10b981" }}
                 sparklesCount={10}
               >
@@ -77,9 +75,8 @@ export const Hero = () => {
 
             {/* Subtext */}
             <p
-              className={`text-lg sm:text-xl text-muted-foreground max-w-2xl mb-8 transition-all duration-700 delay-200 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
+              className={`text-lg sm:text-xl text-muted-foreground max-w-2xl mb-8 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
             >
               We're your dedicated partners in navigating the Amazon marketplace.
               From PPC optimization to brand building, we help sellers maximize their
@@ -88,9 +85,8 @@ export const Hero = () => {
 
             {/* CTAs */}
             <div
-              className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12 transition-all duration-700 delay-300 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
+              className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
             >
               <Button
                 size="lg"
@@ -114,14 +110,13 @@ export const Hero = () => {
 
           {/* Right Side - Amazon Image */}
           <div
-            className={`lg:w-[55%] flex justify-center lg:justify-end items-center transition-all duration-700 delay-500 ${
-              isVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-10 scale-95'
-            }`}
+            className={`hidden sm:flex lg:w-[55%] justify-center lg:justify-end items-center transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-10 scale-95'
+              }`}
           >
             <img
               src={amazonImage}
               alt="Amazon Business Growth"
-              className="w-full max-w-[800px] h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+              className="w-full max-w-[400px] lg:max-w-[800px] h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
               style={{ mixBlendMode: 'multiply', background: 'transparent' }}
             />
           </div>

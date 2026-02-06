@@ -9,6 +9,7 @@ import { Testimonials } from '@/components/Testimonials';
 import { BrandLaunch } from '@/components/BrandLaunch';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
+import { TrustedPartners } from '@/components/TrustedPartners';
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
         <Hero />
         <Services />
         <Company />
+        <TrustedPartners />
         <WhyChooseUs />
         <WhatWeDo />
         <CaseStudies />
