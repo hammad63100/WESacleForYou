@@ -99,7 +99,7 @@ const CaseStudyPage = () => {
 
                         {/* Right Side - Images */}
                         <div className="flex items-center justify-center w-full">
-                            <div className="relative w-full max-w-lg">
+                            <div className="relative w-full max-w-sm">
                                 <div className="absolute inset-0 bg-white/20 rounded-3xl blur-2xl"></div>
                                 {study.images && study.images.length > 1 ? (
                                     <div className="grid grid-cols-1 gap-4">
