@@ -116,7 +116,7 @@ export const Hero = () => {
             <img
               src={amazonImage}
               alt="Amazon Business Growth"
-              className="w-full max-w-[300px] lg:max-w-[600px] h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+              className="w-full max-w-[400px] lg:max-w-[900px] h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
               style={{ mixBlendMode: 'multiply', background: 'transparent' }}
             />
           </div>
