@@ -2,6 +2,7 @@ import amazonAdPartner from '@/assets/Amazon ad verified partner.jfif';
 import amazonAdvertising from '@/assets/Amazon advertising.jfif';
 import helium10 from '@/assets/helium 10.jpg';
 import pickFu from '@/assets/pickFu.png';
+import { Highlight } from '@/components/ui/hero-highlight';
 
 export const TrustedPartners = () => {
     const badges = [
@@ -15,9 +16,11 @@ export const TrustedPartners = () => {
         <section className="py-8 sm:py-10 lg:py-12 bg-muted/30">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col items-center">
-                    <span className="inline-block px-6 py-2 rounded-full border border-border text-sm font-medium text-muted-foreground mb-8">
-                        Trusted Partner
-                    </span>
+                    <div className="mb-8">
+                        <Highlight className="text-black dark:text-white text-sm font-medium px-4 py-1">
+                            Trusted Partner
+                        </Highlight>
+                    </div>
                     <div className="flex justify-center items-center gap-4 sm:gap-8 md:gap-12 flex-wrap">
                         {badges.map((badge, index) => (
                             <img

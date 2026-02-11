@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const footerLinks = {
   services: [
@@ -23,7 +24,7 @@ const footerLinks = {
     { name: 'About Us', href: '#why-us' },
     { name: 'Case Studies', href: '#case-studies' },
     { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Careers', href: '#' },
+    { name: 'Careers', href: '#contact' }, // Redirecting Careers to Contact for now
     { name: 'Contact', href: '#contact' },
   ],
   legal: [
@@ -55,8 +56,37 @@ const socialLinks = [
 ];
 
 export const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Use default behavior for social links or external links
+    if (href.startsWith('http')) return;
+
+    // Handle section links (e.g., #why-us)
+    if (href.startsWith('#') && !href.startsWith('#/')) {
+      e.preventDefault();
+      const targetId = href.replace('#', '');
+
+      const scroll = () => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
+
+      if (location.pathname !== '/') {
+        navigate('/');
+        setTimeout(scroll, 100);
+      } else {
+        scroll();
+      }
+    }
+    // internal routes (e.g. #/privacy-policy) are handled natively by the anchor tag with HashRouter
   };
 
   return (
@@ -65,7 +95,11 @@ export const Footer = () => {
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-3 lg:col-span-2">
-            <a href="#home" className="text-xl sm:text-2xl font-bold text-primary">
+            <a
+              href="#home"
+              onClick={(e) => handleNavigation(e, '#home')}
+              className="text-xl sm:text-2xl font-bold text-primary"
+            >
               WeScaleForYou
             </a>
             <p className="mt-4 text-muted-foreground max-w-sm">
@@ -130,6 +164,7 @@ export const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
+                    onClick={(e) => handleNavigation(e, link.href)}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.name}
@@ -175,3 +210,4 @@ export const Footer = () => {
     </footer>
   );
 };
+

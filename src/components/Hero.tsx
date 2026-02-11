@@ -100,7 +100,7 @@ export const Hero = () => {
                 size="lg"
                 variant="outline"
                 onClick={() => scrollToSection('#case-studies')}
-                className="group border-border hover:bg-muted transition-all duration-300"
+                className="group border-border hover:bg-primary hover:text-white transition-all duration-300"
               >
                 <Play className="mr-2 h-4 w-4" />
                 See Our Work
