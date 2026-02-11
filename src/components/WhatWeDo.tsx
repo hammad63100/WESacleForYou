@@ -1,9 +1,15 @@
-import { Search, PenTool, Sparkles, Settings, Image } from 'lucide-react';
+import { Search, PenTool, Sparkles, Settings, Image as ImageIcon } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import keywordImage from '@/assets/Keyword search and SEO.jpeg';
+import copywritingImage from '@/assets/Compelling copy writing.jpeg';
+import ebcImage from '@/assets/Enhanced brand content.jpeg';
+import backendImage from '@/assets/Backend optimizations.jpeg';
+import imageStrategyImage from '@/assets/Image strategy.jpeg';
 
 const offerings = [
   {
     icon: Search,
+    image: keywordImage,
     title: 'Keyword Research & SEO Integration',
     description:
       'We use advanced keyword tools and real-time search data to uncover what your customers are actually looking for — then integrate those insights naturally throughout your titles, bullets, and descriptions to boost ranking and organic traffic.',
@@ -15,6 +21,7 @@ const offerings = [
   },
   {
     icon: PenTool,
+    image: copywritingImage,
     title: 'Compelling Copywriting',
     description:
       'We craft copy that not only informs but converts. From attention-grabbing titles to persuasive bullet points and story-driven descriptions, our listings connect emotionally and logically with your customers.',
@@ -26,6 +33,7 @@ const offerings = [
   },
   {
     icon: Sparkles,
+    image: ebcImage,
     title: 'Enhanced Brand Content (A+ Content)',
     description:
       'Our creative team designs visually engaging A+ Content that builds trust, elevates your brand image, and increases conversion rates through premium visuals and strategic storytelling.',
@@ -37,6 +45,7 @@ const offerings = [
   },
   {
     icon: Settings,
+    image: backendImage,
     title: 'Backend Optimization',
     description:
       'We take care of the technical side too — including backend search terms, subject matter fields and other hidden metadata that boost your organic visibility behind the scenes.',
@@ -47,7 +56,8 @@ const offerings = [
     ],
   },
   {
-    icon: Image,
+    icon: ImageIcon,
+    image: imageStrategyImage,
     title: 'Image Strategy & Optimization',
     description:
       'High-quality visuals are key to conversion. We ensure your images meet Amazon\'s strict standards and tell a visual story that sells — from hero shots to lifestyle imagery and infographics.',
@@ -57,7 +67,15 @@ const offerings = [
       'Premium product videos for engagement',
     ],
   },
-];
+  {
+    icon: Search, // Fallback icon if needed, though we seem to have only 5 images for 6 items in the list? No, 5 items.
+    image: null, // Just in case
+    title: 'Wait, did I miss one?',
+    description: 'Checking count...',
+    features: [],
+    isHidden: true
+  }
+].filter(o => !o.isHidden);
 
 export const WhatWeDo = () => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
@@ -90,7 +108,7 @@ export const WhatWeDo = () => {
         </div>
 
         {/* Offerings */}
-        <div className="space-y-8">
+        <div className="space-y-12 sm:space-y-16 lg:space-y-24">
           {offerings.map((offering, index) => (
             <OfferingCard
               key={index}
@@ -108,6 +126,7 @@ export const WhatWeDo = () => {
 
 const OfferingCard = ({
   icon: Icon,
+  image,
   title,
   description,
   features,
@@ -116,6 +135,7 @@ const OfferingCard = ({
   isVisible,
 }: {
   icon: React.ComponentType<{ className?: string }>;
+  image: string | null;
   title: string;
   description: string;
   features: string[];
@@ -126,30 +146,48 @@ const OfferingCard = ({
   return (
     <div
       className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'
-        } gap-8 items-center p-8 rounded-3xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-500 hover:shadow-lg ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        } gap-6 lg:gap-8 items-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
         }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
-      {/* Icon & Visual */}
-      <div className="w-full lg:w-1/3 flex justify-center">
-        <div className="w-32 h-32 rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-hover:scale-105 transition-transform">
-          <Icon className="w-16 h-16 text-primary" />
+      {/* Visual Side */}
+      <div className={`w-full lg:w-1/2 flex justify-center ${isReversed ? 'lg:justify-start' : 'lg:justify-end'}`}>
+        <div className="relative w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl group">
+          <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
+          {image ? (
+            <img
+              src={image}
+              alt={title}
+              className="w-full h-auto object-contain transform group-hover:scale-105 transition-transform duration-700"
+            />
+          ) : (
+            <div className="w-full h-full bg-muted flex items-center justify-center">
+              <Icon className="w-24 h-24 text-muted-foreground/50" />
+            </div>
+          )}
         </div>
       </div>
 
-      {/* Content */}
-      <div className="w-full lg:w-2/3">
-        <h3 className="text-2xl font-bold mb-4">{title}</h3>
-        <p className="text-muted-foreground mb-6 leading-relaxed">
+      {/* Content Side */}
+      <div className="w-full lg:w-1/2">
+        <div className="flex items-center gap-4 mb-6">
+          <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+            <Icon className="w-6 h-6" />
+          </div>
+          <h3 className="text-2xl sm:text-3xl font-bold">{title}</h3>
+        </div>
+
+        <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
           {description}
         </p>
-        <ul className="space-y-2">
+
+        <ul className="space-y-4">
           {features.map((feature, i) => (
-            <li key={i} className="flex items-center gap-3">
-              <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
-                <div className="w-2 h-2 rounded-full bg-primary" />
+            <li key={i} className="flex items-start gap-4 group">
+              <div className="w-6 h-6 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mt-0.5 group-hover:bg-primary transition-colors duration-300">
+                <div className="w-2 h-2 rounded-full bg-primary group-hover:bg-white transition-colors duration-300" />
               </div>
-              <span className="text-foreground">{feature}</span>
+              <span className="text-foreground font-medium">{feature}</span>
             </li>
           ))}
         </ul>
@@ -157,3 +195,4 @@ const OfferingCard = ({
     </div>
   );
 };
+
