@@ -29,8 +29,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'wescaleforyou@gmail.com',
-    href: 'mailto:wescaleforyou@gmail.com',
+    value: 'info@wescaleforyou.co.uk',
+    href: 'mailto:info@wescaleforyou.co.uk',
   },
   {
     icon: Phone,
@@ -64,7 +64,7 @@ export const Contact = () => {
 
     try {
       // Send email using EmailJS or mailto fallback
-      const mailtoLink = `mailto:wescaleforyou@gmail.com?subject=New Inquiry from ${encodeURIComponent(formData.name)} - ${encodeURIComponent(formData.service)}&body=${encodeURIComponent(
+      const mailtoLink = `mailto:info@wescaleforyou.co.uk?subject=New Inquiry from ${encodeURIComponent(formData.name)} - ${encodeURIComponent(formData.service)}&body=${encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCompany: ${formData.company}\nService Interest: ${formData.service}\n\nMessage:\n${formData.message}`
       )}`;
 
@@ -86,7 +86,7 @@ export const Contact = () => {
     } catch (error) {
       toast({
         title: 'Error',
-        description: 'Something went wrong. Please try again or email us directly at wescaleforyou@gmail.com',
+        description: 'Something went wrong. Please try again or email us directly at info@wescaleforyou.co.uk',
       });
     }
 
