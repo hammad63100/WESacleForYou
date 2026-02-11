@@ -110,7 +110,7 @@ export const Hero = () => {
 
           {/* Right Side - Amazon Image */}
           <div
-            className={`hidden sm:flex lg:w-[50%] justify-center lg:justify-start items-center -ml-0 lg:-ml-8 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-10 scale-95'
+            className={`flex lg:w-[50%] justify-center lg:justify-start items-center -ml-0 lg:-ml-8 mt-8 lg:mt-0 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-10 scale-95'
               }`}
           >
             <img

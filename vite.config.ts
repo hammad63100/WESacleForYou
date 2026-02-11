@@ -14,6 +14,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  assetsInclude: ["**/*.HEIC"],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

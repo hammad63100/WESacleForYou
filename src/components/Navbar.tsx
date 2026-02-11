@@ -71,12 +71,13 @@ export const Navbar = () => {
   return (
     <>
       {/* Top Green Banner */}
-      <div className="absolute top-0 left-0 right-0 z-50 bg-primary text-primary-foreground py-1.5 px-4">
-        <div className="container mx-auto flex items-center justify-between text-xs sm:text-sm font-medium">
-          <span className="truncate">WANT A FREE AMAZON PPC AUDIT ?</span>
-          <div className="flex items-center gap-2 sm:gap-4">
-            <a href="tel:+13147896911" className="hover:underline hidden sm:flex items-center gap-1">
-              📞 +1 (314) 789-6911
+      <div className="absolute top-0 left-0 right-0 z-50 bg-primary text-primary-foreground py-1 px-2 sm:px-4 overflow-hidden">
+        <div className="w-full max-w-7xl mx-auto flex items-center justify-between text-[9px] sm:text-sm font-medium whitespace-nowrap overflow-x-auto no-scrollbar gap-1 sm:gap-4">
+          <span>WANT A FREE AMAZON PPC AUDIT ?</span>
+          <div className="flex items-center gap-1 sm:gap-4">
+            <a href="https://wa.me/13147896911" target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center gap-1 text-[10px] sm:text-sm">
+              <span className="sm:hidden">📞 +1 314-789-6911</span>
+              <span className="hidden sm:inline">📞 +1 (314) 789-6911</span>
             </a>
             <div className="flex items-center gap-1 sm:gap-2">
               <a
@@ -114,7 +115,7 @@ export const Navbar = () => {
       {/* Main Header - adjusted for top banner */}
       <header
         className={cn(
-          'absolute top-[32px] left-0 right-0 z-40 transition-all duration-300',
+          'relative mt-8 sm:mt-0 sm:absolute sm:top-[32px] left-0 right-0 z-40 transition-all duration-300',
           isScrolled
             ? 'bg-background/95 backdrop-blur-md border-b border-border/50 shadow-md'
             : 'bg-transparent'

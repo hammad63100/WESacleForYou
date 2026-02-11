@@ -80,12 +80,12 @@ const CaseStudyCard = ({
 }) => {
   return (
     <Card
-      className={`group overflow-hidden border-transparent hover:border-primary/20 bg-card shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-square flex flex-col ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+      className={`group overflow-hidden border-transparent hover:border-primary/20 bg-card shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 aspect-auto sm:aspect-square flex flex-col ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       {/* Image - Top Section */}
-      <div className="relative h-[75%] overflow-hidden">
+      <div className="relative h-56 sm:h-[72%] overflow-hidden">
         <img
           src={image}
           alt={title}
@@ -98,19 +98,19 @@ const CaseStudyCard = ({
       </div>
 
       {/* Content - Bottom Section (Split) */}
-      <CardContent className="h-[28%] p-3 grid grid-cols-12 gap-2.5 items-center bg-card relative">
-        <div className="col-span-7 flex flex-col justify-center border-r border-border/40 pr-3">
-          <h3 className="text-lg font-bold text-primary mb-1 line-clamp-1">{title}</h3>
-          <p className="text-sm text-foreground/80 font-medium mb-2 line-clamp-1 leading-tight">
+      <CardContent className="flex-1 p-4 sm:p-3 flex flex-col sm:grid sm:grid-cols-12 gap-4 sm:gap-2.5 items-center bg-card relative">
+        <div className="w-full sm:col-span-7 flex flex-col justify-center sm:border-r border-border/40 sm:pr-3 text-center sm:text-left items-center sm:items-start order-2 sm:order-1">
+          <h3 className="text-xl sm:text-lg font-bold text-primary mb-1 line-clamp-1">{title}</h3>
+          <p className="text-sm text-foreground/80 font-medium mb-3 sm:mb-2 line-clamp-2 sm:line-clamp-1 leading-tight">
             {subtitle}
           </p>
-          <Button className="w-fit mt-auto text-base px-5 py-2.5 h-auto bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md group-hover:shadow-lg transition-all pointer-events-none">
+          <Button className="w-full sm:w-fit mt-auto text-base px-5 py-2.5 h-auto bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md group-hover:shadow-lg transition-all pointer-events-none">
             Read Case Study
           </Button>
         </div>
 
-        <div className="col-span-5 flex flex-col items-center justify-center text-center pl-2">
-          <span className="text-4xl md:text-5xl font-extrabold text-foreground tracking-tight leading-none">{mainStat.value}</span>
+        <div className="w-full sm:col-span-5 flex flex-col items-center justify-center text-center sm:pl-2 order-1 sm:order-2 border-b sm:border-none border-border/40 pb-4 sm:pb-0">
+          <span className="text-5xl sm:text-4xl md:text-5xl font-extrabold text-foreground tracking-tight leading-none">{mainStat.value}</span>
           <span className="text-sm text-muted-foreground mt-1 font-medium bg-muted/50 px-2.5 py-1 rounded-md">{mainStat.label}</span>
         </div>
       </CardContent>
